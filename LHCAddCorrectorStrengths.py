@@ -15,7 +15,12 @@ from collections import OrderedDict
 def float_to_mathematica(x):
     return ("%e"%x).replace('e','*10^')
 
-# function for getting the fractional part of a python float
+
+# converting python float to mathematica notation
+def float_to_mathematica(x):
+    return ("%e"%x).replace('e','*10^')
+
+# getting the fractional part of a python float
 def get_frac(n):
         frac, whole = math.modf(n)
         return frac
@@ -27,9 +32,8 @@ def Less(x,y):
         else:
                 return False
 
-
-
 # converting a pyhton dictionary to an mfs object to import in mathematica
+
 
 def TableToMfs(table,tfssummary):
 	mfs = 'mfs[{'
@@ -206,6 +210,7 @@ Newr.update(Dictcorr)
 data[1]['brho']= str(brho) 
 
 # SAVING THE NEW MFS OBJECT TO FILE
+
 file = open("LCHAddCorrectorStrengths.m", "w")
 file.write(TableToMfs(Newr,data[1]))
 file.close()

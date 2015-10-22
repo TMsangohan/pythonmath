@@ -40,7 +40,6 @@ def tfsDict(inputfile):
             _addParameter(params,l)
         if l.strip()[0]=='*': # beginning of vector list...
             names=l.split()[1:]
-	    print names
             table=_read_table(f,names)
         l=f.readline()
     return table, params
